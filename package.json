@@ -22,7 +22,10 @@
     "date-fns": "^2.28.0",
     "express": "^4.17.2",
     "express-session": "^1.17.2",
-    "uuid": "^8.3.2"
+    "mongodb": "^4.3.0",
+    "mongoose": "^6.1.5",
+    "uuid": "^8.3.2",
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "dotenv": "^10.0.0",
