@@ -1,12 +1,21 @@
 const User = require("../models/userModel")
+const base = require('./baseController')
 
-module.exports = {
+exports.banMe = async (req, res, next) => {
+    try{
+        await User.findByIdAndUpdate(req.user.id, {
+            isbanned : true
+        })
 
-    get : (req, res) => {
-        res.send("new BullShit!!")
-    },
-    blabla : (req, res) => {
-        res.send("new BullShit!!")
+        res.status(204).json({
+            status: 'success', 
+            data: null
+        })
+    }catch(error){
+        next(error);
     }
-
 }
+exports.getAllUsers = base.getAll(User)
+exports.getUser = base.getOne(User)
+exports.updateUser = base.updateOne(User)
+exports.deleteUser = base.deleteOne(User)

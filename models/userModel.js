@@ -30,12 +30,12 @@ const userSchema = new mongoose.Schema({
       message : "Something went wrong!"
     },
   },
-  reservations: [
-    {
-      type: mongoose.Schema.types.ObjectId,
-      ref: "reservation",
-    },
-  ],
+  // reservations: [
+  //   {
+  //     type: mongoose.Schema.types.ObjectId,
+  //     ref: "reservation",
+  //   },
+  // ],
   role: {
     type : String, 
     enum :  ["admin", "guest"],
