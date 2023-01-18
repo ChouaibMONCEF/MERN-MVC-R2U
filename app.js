@@ -5,9 +5,7 @@ const mongoSanitize = require("express-mongo-sanitize")
 const xss = require("xss-clean")
 const hpp = require("hpp")
 const cors = require("cors")
-const winnerRoutes = require("./routes/winner")
 const userRoutes = require("./routes/user")
-const holderRoutes = require("./routes/holder")
 const globalErrHandler = require("./controllers/errorController")
 const AppError = require("./utils/appError")
 const app = express()
@@ -44,8 +42,6 @@ app.use(xss())
 app.use(hpp())
 
 app.use("/api/users", userRoutes)
-app.use("/api/winners", winnerRoutes)
-app.use("/api/holders", holderRoutes)
 
 app.use("*", (req, res, next) => {
   const err = new AppError(404, "Fail", "Undefined route")
